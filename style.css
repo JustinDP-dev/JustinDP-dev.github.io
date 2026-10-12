@@ -1,0 +1,115 @@
+:root {
+  --bg: #f4efe3;
+  --surface: #fffaf0;
+  --text: #2a1d12;
+  --muted: #6b5a48;
+  --accent: #b5321f;
+  --gold: #c99a2e;
+  --border: #e3d6bd;
+  --hero: #12395e;
+  --hero-text: #fff2cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1b2a;
+    --surface: #132a40;
+    --text: #ece4d4;
+    --muted: #a9b4c0;
+    --accent: #f07a62;
+    --gold: #ffd56b;
+    --border: #23405c;
+    --hero: #081422;
+    --hero-text: #ffdb6b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--accent); }
+
+header {
+  background: var(--hero);
+  color: var(--hero-text);
+  padding: 20px 16px;
+}
+
+header a {
+  color: var(--hero-text);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+h3 { font-size: 1.05rem; margin: 20px 0 4px; }
+
+.muted { color: var(--muted); }
+
+.card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.card img {
+  width: 112px;
+  height: 112px;
+  border-radius: 24px;
+  flex: none;
+}
+
+.card h2 { margin: 0 0 4px; }
+.card p { margin: 0 0 8px; }
+
+.links a { margin-right: 16px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+th { color: var(--muted); font-weight: 600; }
+
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .card { flex-direction: column; text-align: center; }
+  .links a { display: inline-block; margin: 4px 8px; }
+  table { font-size: 0.88rem; }
+}
